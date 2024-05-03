@@ -1,0 +1,42 @@
+/* Add this CSS to your existing styles.css file or create a new CSS file and link it in your HTML */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 600px; /* Fixed height */
+    overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+.card {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+/* Custom collapsing effect */
+.previous-prompt-container {
+    overflow: hidden; /* Hide the content initially */
+    transition: max-height 0.3s ease; /* Smooth transition animation */
+    max-height: 0; /* Collapse the container */
+}
+
+.previous-prompt-container.collapsed {
+    max-height: 200px; /* Expand the container */
+}
+
+.previous-prompt-header {
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.previous-prompt-content {
+    padding: 10px 0;
+}

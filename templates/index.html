@@ -4,45 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Delay Prediction</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-
+    <title>Main Page</title>
+    <style>
+    </style>
 </head>
 <body>
 <div class="container">
-    <h1>Flight Delay Prediction</h1>
-    <form action="{% url 'result' %}" method="get">
-        {% csrf_token %}
-
-        <label for="origin">Origin:</label>
-        <select id="origin" name="origin" required>
-            <option value=""></option>
-            {% for code, airport in origin_mapping.items %}
-                <option value="{{ code }}">{{ airport }}</option>
-            {% endfor %}
-        </select>
-
-        <label for="destination">Destination:</label>
-        <select id="destination" name="destination" required>
-            <option value=""></option>
-            {% for code, airport in destination_mapping.items %}
-                <option value="{{ code }}">{{ airport }}</option>
-            {% endfor %}
-        </select>
-
-        <label for="airline_code">Airline Code:</label>
-        <select id="airline_code" name="airline_code" required>
-            <option value=""></option>
-            {% for code, airline in label_mapping.items %}
-                <option value="{{ code }}">{{ airline }}</option>
-            {% endfor %}
-        </select>
-
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>
-
-        <input type="submit" value="Get Predictions">
-    </form>
+    <h1>Welcome to Flight Prediction Suite</h1>
+    <div class="options">
+        <div class="card" onclick="window.location.href='{% url 'flight_delay_prediction' %}'">
+            <div class="card-content">
+                <div class="card-title">Flight Delay Prediction</div>
+                <div class="card-description">Predict flight delays with accuracy!</div>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='{% url 'flight_fare_prediction' %}'">
+            <div class="card-content">
+                <div class="card-title">Flight Fare Prediction</div>
+                <div class="card-description">Predict flight fare with accuracy!</div>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='{% url 'chatbot' %}'">
+            <div class="card-content">
+                <div class="card-title">Chat with us</div>
+                <div class="card-description">Talk with us for our flight knowledge</div>
+            </div>
+        </div>
+        {# Add more card options for other functionalities #}
+    </div>
 </div>
 </body>
 </html>

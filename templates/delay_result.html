@@ -1,0 +1,18 @@
+<!-- delay.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Delay Prediction</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- Use a separate CSS file -->
+</head>
+<body>
+<div class="container delay-container"> <!-- Add a unique class for this page -->
+    <h1>Flight Delay Prediction</h1>
+    <p>{{ result }}</p>
+</div>
+</body>
+</html>

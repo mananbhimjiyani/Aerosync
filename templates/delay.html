@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Delay Prediction</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>Flight Delay Prediction</h1>
+    <div class="options">
+        <div class="card" onclick="window.location.href='{% url 'flight_arrival_delay' %}'">
+            <div class="card-content">
+                <div class="card-title">Flight Arrival Delay Prediction</div>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='{% url 'flight_departure_delay' %}'">
+            <div class="card-content">
+                <div class="card-title">Flight Departure Delay Prediction</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

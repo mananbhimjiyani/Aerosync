@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight fare Prediction</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+<div class="container">
+    <h1>Flight Fare Prediction</h1>
+    <form action="{% url 'fare_result' %}" method="get">
+        {% csrf_token %}
+
+        <label for="origin">Origin:</label>
+        <select id="origin" name="origin" required>
+            <option value=""></option>
+            {% for code, airport in origin_mapping.items %}
+                <option value="{{ code }}">{{ airport }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+            <option value=""></option>
+            {% for code, airport in destination_mapping.items %}
+                <option value="{{ code }}">{{ airport }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="airline_code">Airline Code:</label>
+        <select id="airline_code" name="airline_code" required>
+            <option value=""></option>
+            {% for code, airline in label_mapping.items %}
+                <option value="{{ code }}">{{ airline }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <input type="submit" value="Get Predictions">
+    </form>
+</div>
+</body>
+</html>

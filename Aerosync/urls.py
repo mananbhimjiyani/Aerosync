@@ -18,12 +18,20 @@ from django.contrib import admin
 from django.urls import path
 
 from Aerosync import views
-    
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     # add these to configure our home page (default view) and result web page
     path('', views.home, name='home'),
-    path('result/', views.result, name='result'),
+    path('flight_fare_prediction/', views.flight_fare_prediction, name='flight_fare_prediction'),
+    path('flight_delay_prediction/', views.flight_delay_prediction, name='flight_delay_prediction'),
+    path('flight_arrival_delay_result/', views.flight_arrival_delay_result, name='flight_arrival_delay_result'),
+    path('flight_arrival_delay/', views.flight_arrival_delay, name='flight_arrival_delay'),
+    path('flight_departure_delay_result/', views.flight_departure_delay_result, name='flight_departure_delay_result'),
+    path('flight_departure_delay/', views.flight_departure_delay, name='flight_departure_delay'),
+    path('fareresult/', views.fare_result, name='fare_result'),
+    path('chatbot/', views.chatbot, name='chatbot'),
+    path('generate_response/', views.generate_response, name='generate_response'),
+    # path('delayresult/', views.delay_result, name='delay_result'),
 ]

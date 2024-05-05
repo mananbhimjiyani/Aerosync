@@ -3,23 +3,39 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    background-image: url('https://images.unsplash.com/photo-1617987828907-18d519928d8e?q=80&w=2950&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: url('https://r4.wallpaperflare.com/wallpaper/27/960/884/digital-art-planes-clouds-rhads-wallpaper-596068bd110acd7b6627984fb021469d.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+  
+.container {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
 }
 
-.container {
-    max-width: 800px; /* Adjusted maximum width */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.header {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 h1 {
@@ -118,18 +134,17 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .card {
-    flex: 1; /* Each card takes equal width */
-    padding: 20px;
-    margin: 10px; /* Adjusted margin */
-    background-color: #007bff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    background-size: 50px 50px;
+    background-color: rgba(25, 25, 25, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .card-title {

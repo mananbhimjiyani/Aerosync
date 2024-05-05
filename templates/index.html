@@ -1,38 +1,37 @@
-{% load static %}
+{% load static %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>Main Page</title>
-    <style>
-    </style>
+    <title>AeroSync</title>
 </head>
 <body>
-<div class="container">
-    <h1>Welcome to Flight Prediction Suite</h1>
-    <div class="options">
-        <div class="card" onclick="window.location.href='{% url 'flight_delay_prediction' %}'">
-            <div class="card-content">
-                <div class="card-title">Flight Delay Prediction</div>
-                <div class="card-description">Predict flight delays with accuracy!</div>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to AeroSync</h1>
+        </div>
+        <div class="options">
+            <div class="card" onclick="window.location.href='{% url 'flight_delay_prediction' %}'">
+                <div class="card-content">
+                    <div class="card-title">Flight Delay Prediction</div>
+                    <div class="card-description">Predict flight delays with accuracy!</div>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='{% url 'flight_fare_prediction' %}'">
+                <div class="card-content">
+                    <div class="card-title">Flight Fare Prediction</div>
+                    <div class="card-description">Predict flight fare with accuracy!</div>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='{% url 'chatbot' %}'">
+                <div class="card-content">
+                    <div class="card-title">AeroSync Chat</div>
+                    <div class="card-description">Talk with us for our flight knowledge</div>
+                </div>
             </div>
         </div>
-        <div class="card" onclick="window.location.href='{% url 'flight_fare_prediction' %}'">
-            <div class="card-content">
-                <div class="card-title">Flight Fare Prediction</div>
-                <div class="card-description">Predict flight fare with accuracy!</div>
-            </div>
-        </div>
-        <div class="card" onclick="window.location.href='{% url 'chatbot' %}'">
-            <div class="card-content">
-                <div class="card-title">Chat with us</div>
-                <div class="card-description">Talk with us for our flight knowledge</div>
-            </div>
-        </div>
-        {# Add more card options for other functionalities #}
     </div>
-</div>
 </body>
 </html>

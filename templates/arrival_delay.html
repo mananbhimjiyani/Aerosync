@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Arrival Delay Prediction</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'prediction.css' %}">
 </head>
 <body>
 <div class="container">
     <h1>Flight Arrival Delay Prediction</h1>
-    <form action="{% url 'flight_arrival_delay_result' %}" method="get">
+    <form action="{% url 'flight_arrival_delay_result' %}" method="get" class="flight-form">
         {% csrf_token %}
 
         <!-- arrival_delay.html -->
@@ -47,10 +47,10 @@
         <label for="departure_time">Departure Time:</label>
         <input type="time" id="departure_time" name="departure_time" required>
 
-        <label for="arrival_date">Departure Date: </label>
+        <label for="arrival_date">Arrival Date: </label>
         <input type="date" id="arrival_date" name="arrival_date" required>
 
-        <label for="arrival_time">Departure Time:</label>
+        <label for="arrival_time">Arrival Time:</label>
         <input type="time" id="arrival_time" name="arrival_time" required>
 
 

@@ -1,0 +1,237 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    background-image: url('https://r4.wallpaperflare.com/wallpaper/27/960/884/digital-art-planes-clouds-rhads-wallpaper-596068bd110acd7b6627984fb021469d.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 800px; /* Adjusted maximum width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(25, 25, 25, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.flight-form {
+    color: white;
+}
+
+input[type="text"],
+input[type="time"],
+input[type="datetime-local"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+input[type="submit"] {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Custom arrow for time picker */
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background-color: transparent;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23007bff" d="M5 8h14l-7 8-7-8z"/></svg>');
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* Hide default arrow in Firefox */
+input[type="time"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+/* Remove default border in Firefox */
+input[type="time"],
+input[type="datetime-local"] {
+    -moz-appearance: none;
+}
+
+/* Style for date input */
+input[type="date"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    /* Styling for the calendar icon */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23007bff" d="M5 8h14l-7 8-7-8z"/></svg>');
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer;
+    /* Hide default arrow in Firefox */
+    -moz-appearance: none;
+}
+
+/* Remove default border in Firefox */
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+
+/* Card styles */
+.card-container {
+    display: flex;
+    justify-content: space-between; /* Spread cards evenly */
+}
+
+.card {
+    flex: 1; /* Each card takes equal width */
+    padding: 20px;
+    margin: 10px; /* Adjusted margin */
+    background-color: #007bff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-size: 50px 50px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    color: #fff;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.card-button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.checkbox-container {
+    display: inline-block;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-input {
+    display: none; /* Hide the actual checkbox */
+}
+
+.checkbox-slider {
+    position: relative;
+    display: inline-block;
+    width: 40px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    background-color: #ccc;
+    border-radius: 20px; /* Make it round */
+    margin-left: 10px; /* Adjust spacing between text and slider */
+}
+
+.checkbox-slider:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 18px; /* Adjust width of the slider button */
+    height: 18px; /* Adjust height of the slider button */
+    background-color: white;
+    border-radius: 50%; /* Make it round */
+    transition: 0.4s; /* Smooth transition when sliding */
+}
+
+.checkbox-input:checked + .checkbox-slider {
+    background-color: #2196F3; /* Change background color when checked */
+}
+
+.checkbox-input:checked + .checkbox-slider:before {
+    transform: translateX(20px); /* Slide the button to the right when checked */
+}
+
+/* delay_styles.css */
+
+.delay-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.delay-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.delay-container h2 {
+    font-size: 2rem;
+    color: #666;
+}
+
+.delay-container p {
+    font-size: 1.5rem;
+    color: #00ccff; /* Change the color to your preference */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
